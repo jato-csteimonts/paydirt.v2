@@ -1,3 +1,6 @@
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
         <!-- Toggler -->
@@ -115,6 +118,14 @@
                         <i class="ni ni-pin-3 text-orange"></i> {{ __('Maps') }}
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="ni ni-pin-3 text-orange"></i>{{ __('Logout') }}
+                    </a>
+                </li>
+
+                <?php /**
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="ni ni-key-25 text-info"></i> {{ __('Login') }}
@@ -125,6 +136,8 @@
                         <i class="ni ni-circle-08 text-pink"></i> {{ __('Register') }}
                     </a>
                 </li>
+                **/ ?>
+
                 <li class="nav-item mb-5 bg-danger" style="position: absolute; bottom: 0;">
                     <a class="nav-link text-white" href="https://www.creative-tim.com/product/argon-dashboard-pro-laravel" target="_blank">
                         <i class="ni ni-cloud-download-95"></i> Upgrade to PRO
